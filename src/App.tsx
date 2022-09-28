@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import {useAppDispatch, useAppSelector} from './hooks/store';
+import axios from 'axios';
+import {getDevelopers} from '../src/api/getDevelopers';
+// import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const store = useAppSelector(state => state);
+	const dispatch = useAppDispatch();
+	console.log(store);
+	useEffect(() => {
+		const getDevs = async () => {
+			const devs = await getDevelopers();
+			console.log(devs);
+		};
+		getDevs();
+	}, []);
+	return <div/>;
 }
-
+ 
 export default App;
