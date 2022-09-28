@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 import Table from 'react-bootstrap/Table';
 import {GetDevelopers, useFetchAllItemsQuery} from '../../api/getDevelopers';
-
+import {motion} from 'framer-motion';
 
 export const TableDevs = () => {
 	const {data: devs} = useFetchAllItemsQuery('');
@@ -19,13 +19,22 @@ export const TableDevs = () => {
 			</thead>
 			<tbody>
 				{devs?.map((dev: GetDevelopers) =>
-					<tr key={dev.id}>
+
+					<motion.tr key={dev.id}
+					   layout
+					   initial={{ opacity: 0 }}
+					   animate={{ opacity: 1 }}
+					   exit={{
+						   opacity: 0,
+					   }}
+					   transition={{ opacity: { duration: 0.8 } }}
+					>
 						<td>{Object.values(dev)[0]}</td>
 						<td>{dev.name}</td>
 						<td>{dev.age}</td>
 						<td>{dev.language}</td>
 						<td>{dev.framework}</td>
-					</tr>
+					</motion.tr>
 				)}
 
 				{/*{info?.map((dev: string[] | number[]) =>*/}

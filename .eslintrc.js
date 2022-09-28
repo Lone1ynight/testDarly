@@ -37,6 +37,6 @@ module.exports = {
 			'error',
 			'always'
 		],
-
+		'no-mixed-spaces-and-tabs': 'off'
 	}
 };
