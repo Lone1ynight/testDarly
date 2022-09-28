@@ -1,5 +1,14 @@
 {
   "developers": [
-    { "id": 1, "name":  "Oleh Taran" }
+    { "id": 1,
+      "name":  "Oleh Taran",
+      "age": "19"
+    },
+    { "id": 2,
+      "name":  "Prokhor Antropov",
+      "age": "19",
+      "language": "JS",
+      "framework": "React"
+    }
   ]
 }
