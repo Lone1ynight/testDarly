@@ -1,0 +1,18 @@
+.table {
+  //overflow: scroll;
+  max-height: 100%;
+
+  .headerTable {
+    height: 75px;
+    //display: flex;
+    align-items: center;
+  }
+
+  .rowInfo{
+    //height: 75px;
+  }
+}
+
+.inputNewDev {
+  width: 100%;
+}

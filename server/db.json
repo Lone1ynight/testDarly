@@ -1,14 +1,180 @@
 {
   "developers": [
-    { "id": 1,
-      "name":  "Oleh Taran",
-      "age": "19"
-    },
-    { "id": 2,
-      "name":  "Prokhor Antropov",
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
       "age": "19",
-      "language": "JS",
-      "framework": "React"
+      "id": "48J5IVj"
+    },
+    {
+      "name": "OLEH1",
+      "job": " Frontender ",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "66xF28L"
+    },
+    {
+      "name": "OLEH2",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "oXwRfpa"
+    },
+    {
+      "name": "OLEH2",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "77jcPA-"
+    },
+    {
+      "name": "OLEH2",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "ktY4oBS"
+    },
+    {
+      "name": "OLEH3",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "93i68PF"
+    },
+    {
+      "name": "фыв",
+      "job": "фыв",
+      "phoneNumber": "123",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "9PL3JxS"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "ZCMro-5"
+    },
+    {
+      "name": "OLEH",
+      "job": "123",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": 19,
+      "id": "0o9s1pR"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "caNDY7O"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "t8qYfpP"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "Hkfbaco"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "duaxq-_"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "om1Jfoz"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "yg-LU76"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "0dM7n_w"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "J1LCDne"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "DMsk_ML"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "IwwYdPf"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "c1l2BEP"
+    },
+    {
+      "name": "OLEH",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "19",
+      "id": "LhRauSE"
+    },
+    {
+      "name": "SUI",
+      "job": "React Frontend Developer",
+      "phoneNumber": "0972285730",
+      "email": "podadi2003@gmail.com",
+      "age": "20",
+      "id": "XUJ6L7N"
     }
   ]
 }

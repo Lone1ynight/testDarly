@@ -1,15 +1,16 @@
 import React, {Dispatch, FC, SetStateAction} from 'react';
 import './style.scss';
 
-interface HeaderProps {
-	openModal: boolean,
-	setOpenModal: Dispatch<SetStateAction<boolean>>
+export interface newDevStateOpen {
+	newDevOpen: boolean,
+	setNewDevOpen: Dispatch<SetStateAction<boolean>>
 }
 
-export const Header: FC<HeaderProps> = ({openModal, setOpenModal}) => {
+export const Header: FC<newDevStateOpen> = ({newDevOpen, setNewDevOpen}) => {
 	const openModalWindow = () => {
-		setOpenModal(true);
+		setNewDevOpen(true);
 	};
+
 	return(
 		<div className="header">
 			<div className="header title">Table</div>

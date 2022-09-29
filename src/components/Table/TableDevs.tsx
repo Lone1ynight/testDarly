@@ -1,53 +1,51 @@
-import React from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import './style.scss';
 import Table from 'react-bootstrap/Table';
-import {GetDevelopers, useFetchAllItemsQuery} from '../../api/getDevelopers';
-import {motion} from 'framer-motion';
+import {useFetchAllItemsQuery} from '../../service/getDevelopers';
+import {newDevStateOpen} from '../Header/Header';
+import {Row} from '../Row/Row';
+import {CreateNewDev} from '../CreateNewDev/CreateNewDev';
+import {Developer} from '../../interfaces/interfaces';
 
-export const TableDevs = () => {
-	const {data: devs} = useFetchAllItemsQuery('');
-	const headers =  devs?.map((item: GetDevelopers) => Object.keys(item)).reduce((maxArr: string[], arr: string[]) => maxArr.length > arr.length ? maxArr : arr, '');
+export const TableDevs: FC<newDevStateOpen> = ({newDevOpen, setNewDevOpen}) => {
+	const [limit, setLimit] = useState<number>(15);
+	const {data: devs, refetch} = useFetchAllItemsQuery(limit);
+	const headers = devs?.map((item: Developer) => Object.keys(item)).reduce((maxArr: string[], arr: string[]) => maxArr.length > arr.length ? maxArr : arr, []).splice(0,5);
 
-	const info = devs?.map((item: GetDevelopers) => Object.values(item));
-	console.log(info, devs);
-	return(
-		<Table  striped bordered hover variant="dark">
-			<thead>
-				<tr>
-					{headers?.map((header: string, index:number) => <th key={index}>{header}</th>)}
-				</tr>
-			</thead>
-			<tbody>
-				{devs?.map((dev: GetDevelopers) =>
+	useEffect(() => {
+		document.addEventListener('scroll', scrollHandler);
+		return function (){
+			document.removeEventListener('scroll', scrollHandler);
+		};
+	});
 
-					<motion.tr key={dev.id}
-					   layout
-					   initial={{ opacity: 0 }}
-					   animate={{ opacity: 1 }}
-					   exit={{
-						   opacity: 0,
-					   }}
-					   transition={{ opacity: { duration: 0.8 } }}
-					>
-						<td>{Object.values(dev)[0]}</td>
-						<td>{dev.name}</td>
-						<td>{dev.age}</td>
-						<td>{dev.language}</td>
-						<td>{dev.framework}</td>
-					</motion.tr>
-				)}
+	const scrollHandler = (e: any) => {
+		if(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1 && devs?.length ===limit) {
+			setLimit(limit+5);
+		}
+	};
 
-				{/*{info?.map((dev: string[] | number[]) =>*/}
-				{/*	<tr>*/}
-				{/*		{*/}
-				{/*			dev.map((item: string | number) =>*/}
-				{/*				<td>{item}</td>*/}
-				{/*			)*/}
-				{/*		}*/}
-				{/*	</tr>*/}
-				{/*)}*/}
+	useEffect(() => {
+		refetch();
+	}, [limit]);
 
-			</tbody>
-		</Table>
-	);
+	return (
+		<div className="table" id="table">
+			{ devs ?
+				<Table striped bordered hover variant="dark" size="rl">
+					<thead>
+						<tr className="headerTable">
+							{headers?.map((header: string, index: number) => <th key={index}>{header}</th>)}
+						</tr>
+					</thead>
+					<tbody>
+						{newDevOpen && <CreateNewDev setNewDevOpen={setNewDevOpen}/>}
+						{devs?.map((dev: Developer) =>
+							<Row dev={dev} key={dev.id}/>
+						)}
+					</tbody>
+				</Table>
+				: <div>loading</div>
+			}
+		</div>);
 };
