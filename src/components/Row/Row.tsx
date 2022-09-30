@@ -17,7 +17,7 @@ export const Row: FC<RowProps> = ({dev}) => {
 		transition={{ opacity: { duration: 0.8 } }}
 
 	>
-		<td className="rowInfo">{dev.name}</td>
+		<td>{dev.name}</td>
 		<td>{dev.job}</td>
 		<td>{dev.phoneNumber}</td>
 		<td>{dev.email}</td>

@@ -2,3 +2,18 @@
   height: 100vh;
   font-size: 32px;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: #c79d67;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d9ad75;
+  border-radius: 10px;
+}

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import './App.scss';
 import {Header} from './components/Header/Header';
 import {TableDevs} from './components/TableDevs/TableDevs';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
