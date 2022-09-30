@@ -38,5 +38,6 @@ module.exports = {
 			'always'
 		],
 		'no-mixed-spaces-and-tabs': 'off',
+		'@typescript-eslint/no-explicit-any': 'off'
 	}
 };

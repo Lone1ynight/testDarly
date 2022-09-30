@@ -1,47 +1,22 @@
-import React, {Dispatch, FC, SetStateAction, useEffect, useState} from 'react';
+import React, {Dispatch, FC, SetStateAction} from 'react';
 import {motion} from 'framer-motion';
-import {useCreateDevMutation} from '../../service/getDevelopers';
-import './style.scss';
 import {Developer} from '../../interfaces/interfaces';
+import {Field, ErrorMessage} from 'formik';
+import './style.scss';
 
 interface CreateNewDevProps {
-	setNewDevOpen: Dispatch<SetStateAction<boolean>>
+	setNewDevOpen: Dispatch<SetStateAction<boolean>>,
+	initState: Developer,
+	isSuccess: boolean
 }
 
-export const CreateNewDev: FC<CreateNewDevProps> = ({setNewDevOpen}) => {
-	const [createDev, {isSuccess}] = useCreateDevMutation();
-
-	const initState = {
-		name: '',
-		job: '',
-		phoneNumber: '',
-		email: '',
-		age: +'',
-	};
-
-	const [newDev, setNewDev] = useState<Developer>(initState);
-
-	const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setNewDev({
-			...newDev,
-			[e.target.name]: e.target.value
-		});
-	};
+export const CreateNewDev: FC<CreateNewDevProps> = ({setNewDevOpen, initState, isSuccess}) => {
 
 	const cancelNewDev = () => {
 		setNewDevOpen(false);
-		setNewDev(initState);
 	};
 
-	const createNewDev = () => {
-		createDev(newDev);
-	};
-
-	useEffect(() => {
-		if (isSuccess){
-			cancelNewDev();
-		}
-	}, [isSuccess]);
+	const renderError = (message: string) => <p className="errorMessage">{message}</p>;
 
 	return (
 		<>
@@ -55,14 +30,21 @@ export const CreateNewDev: FC<CreateNewDevProps> = ({setNewDevOpen}) => {
 				transition={{opacity: {duration: 0.8}}}
 				className="rowCreate"
 			>
-				{/*<form>*/}
-				{Object.keys(initState).map((item, index) => <td key={index}><input className="inputNewDev" name={item} onChange={onInputChange}/></td>)}
-				{/*</form>*/}
+
+				{Object.keys(initState).map((item, index) =>
+					<td key={index}>
+						<Field className="inputNewDev" name={item}/>
+						<ErrorMessage name={item} render={renderError}/>
+					</td>)}
+			
 			</motion.tr>
 			<tr>
 				<td className="btnTd" colSpan={5}>
-					<button onClick={() => cancelNewDev()} className="btnCreate">Отменить</button>
-					<button onClick={() => createNewDev()} className="btnCreate">Подтвердить</button>
+					<div className="btns">
+						<button className="button" onClick={() => cancelNewDev()}>Cancel</button>
+						<button type="submit" className="button">Confirm</button>
+					</div>
+
 				</td>
 			</tr>
 		</>

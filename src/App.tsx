@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {useAppDispatch, useAppSelector} from './hooks/store';
+import React, {useState} from 'react';
 import './App.scss';
 import {Header} from './components/Header/Header';
-import {TableDevs} from './components/Table/TableDevs';
+import {TableDevs} from './components/TableDevs/TableDevs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
